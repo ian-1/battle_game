@@ -7,16 +7,14 @@ end
  
 feature 'Enter names' do
   scenario 'Players can enter their names' do
-    visit('/')
-    fill_in :player_1_name, with: 'Player_1'
-    fill_in :player_2_name, with: 'Player_2'
-    click_button 'Enter players'
-
-    save_and_open_page
-
+    sign_in_and_play
     expect(page).to have_content 'Player_1 vs. Player_2'
   end
 end
 
-
-
+feature 'See Player 2 hitpoints' do
+  scenario 'player 1 can see player 2 hitpoints' do
+    sign_in_and_play
+    expect(page).to have_content '10HP'
+  end
+end
