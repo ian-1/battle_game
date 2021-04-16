@@ -10,9 +10,4 @@ class Player
   def deduct
     @HP -= 10
   end
-
-  def attack(player)
-    player.deduct
-  end
-
 end

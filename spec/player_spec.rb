@@ -9,12 +9,10 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it "should deduct 10 points from player's HP" do 
-      player_2 = described_class.new('Biily')
-      subject.attack(player_2)
-      expect(player_2.HP).to eq(90)
+  describe '#deduct' do
+    it 'deducts 10 pts from players HP' do
+      subject.deduct
+      expect(subject.HP).to eq(90)
     end
   end
-
 end
