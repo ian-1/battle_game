@@ -1,11 +1,9 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require 'player'
+require './lib/player'
 
 class Battle < Sinatra::Base
   enable :sessions
-  $player_one_name
-  $player_two_name
 
   configure :development do
     register Sinatra::Reloader
@@ -30,6 +28,7 @@ class Battle < Sinatra::Base
   get '/attack' do
     @player_1_name = $player_one.name
     @player_2_name = $player_two.name
+    @player_2_HP = $player_two.deduct
     erb :attack
   end
 

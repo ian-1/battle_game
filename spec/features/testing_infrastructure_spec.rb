@@ -26,3 +26,11 @@ feature 'Attack Player 2 and get confirmation' do
     expect(page).to have_content 'Player_2 has been hit'
   end
 end
+
+feature 'HP points deducted when hit' do
+  scenario "Player 2's HP gets deducted by 10 when hit" do
+    sign_in_and_play
+    click_button 'Attack'
+    expect(page).to have_content '90 HP'
+  end
+end
