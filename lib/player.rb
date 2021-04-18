@@ -1,13 +1,14 @@
-
 class Player
-  attr_reader :name, :HP
+  attr_reader :name, :hit_points
+  attr_accessor :message
 
   def initialize(name)
     @name = name
-    @HP = 100
+    @message = "has been named #{@name}"
+    @hit_points = 100
   end
 
   def deduct
-    @HP -= 10
+    @hit_points -= 10
   end
 end

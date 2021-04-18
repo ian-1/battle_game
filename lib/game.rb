@@ -1,5 +1,7 @@
+require 'player'
+
 class Game
-  def attack(player)
-    player.deduct
+  def attack(defender)
+    defender.deduct
   end
 end
